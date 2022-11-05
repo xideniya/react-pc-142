@@ -25,9 +25,7 @@ const Publish = () => {
       const res = await http.get(`/mp/articles/${id}`)
       // 表单数据回填
       const obj = {
-        channel_id: res.data.channel_id,
-        content: res.data.content,
-        title: res.data.title,
+        ...res.data,
         type: res.data.cover.type
       }
       form.current.setFieldsValue(obj)
@@ -42,7 +40,6 @@ const Publish = () => {
     }
     if (id) {
       getArticle()
-      console.log()
     }
   }, [id])
   // mobx仓库
