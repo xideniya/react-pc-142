@@ -5,7 +5,7 @@ import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom'
 import { useStore } from '@/store/index'
 // store 数据变化后更新视图
 import { observer } from 'mobx-react-lite'
-import './inde.scss'
+import './index.scss'
 
 const { Header, Sider } = Layout
 
@@ -25,7 +25,7 @@ const GeekLayout = () => {
     navigate('/login')
   }
   const items = [
-    { label: <Link to="home">数据概览</Link>, key: '/layout/home', icon: <HomeOutlined /> }, // 菜单项务必填写 key
+    { label: <Link to="">数据概览</Link>, key: '/layout', icon: <HomeOutlined /> }, // 菜单项务必填写 key
     { label: <Link to="artical">内容管理</Link>, key: '/layout/artical', icon: <DiffOutlined /> },
     { label: <Link to="publish">发布文章</Link>, key: '/layout/publish', icon: <EditOutlined /> }
   ]
