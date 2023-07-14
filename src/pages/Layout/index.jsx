@@ -25,9 +25,9 @@ const GeekLayout = () => {
     navigate('/login')
   }
   const items = [
-    { label: <Link to="">数据概览</Link>, key: '/layout', icon: <HomeOutlined /> }, // 菜单项务必填写 key
-    { label: <Link to="artical">内容管理</Link>, key: '/layout/artical', icon: <DiffOutlined /> },
-    { label: <Link to="publish">发布文章</Link>, key: '/layout/publish', icon: <EditOutlined /> }
+    { label: <Link to="">数据概览</Link>, key: '/layout', icon: <HomeOutlined /> ,title:'数据概览'}, // 菜单项务必填写 key
+    { label: <Link to="article">内容管理</Link>, key: '/layout/article', icon: <DiffOutlined /> ,title:'内容管理'},
+    { label: <Link to="publish">发布文章</Link>, key: '/layout/publish', icon: <EditOutlined />,title:'发布文章' }
   ]
   return (
     <Layout>

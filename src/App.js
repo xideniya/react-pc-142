@@ -7,8 +7,9 @@ import './app.scss'
 // 路由懒加载
 const Login = lazy(() => import('@/pages/Login'))
 const Home = lazy(() => import('@/pages/Home'))
-const Artical = lazy(() => import('@/pages/Artical'))
+const Article = lazy(() => import('@/pages/Article'))
 const Publish = lazy(() => import('@/pages/Publish'))
+//解决路由切换时的闪屏bug
 const lazyLoad=(node)=>{
     return <Suspense fallback={
         <div>loading</div>
@@ -32,7 +33,7 @@ function App() {
               }
             >
               <Route  element={lazyLoad(<Home />)} index></Route>
-              <Route path="artical" element={lazyLoad(<Artical />)}></Route>
+              <Route path="article" element={lazyLoad(<Article />)}></Route>
               <Route path="publish" element={lazyLoad(<Publish />)}></Route>
               {/*<Route path="" element={<Navigate to="home" />}></Route>*/}
             </Route>
