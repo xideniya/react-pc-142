@@ -17,7 +17,7 @@ const Article = () => {
   // 路由跳转hook
   const navigate = useNavigate()
   // 文章列表数据
-  const [artical, setArticleList] = useState({
+  const [article, setArticleList] = useState({
     list: [],
     count: 0
   })
@@ -79,7 +79,7 @@ const Article = () => {
     })
   }
   // 编辑按钮
-  const goPubllish = (data) => {
+  const goPublish = (data) => {
     navigate(`/layout/publish?id=${data.id}`)
   }
   const columns = [
@@ -127,7 +127,7 @@ const Article = () => {
               shape="circle"
               icon={<EditOutlined />}
               onClick={() => {
-                goPubllish(data)
+                goPublish(data)
               }}
             />
             <Button
@@ -152,7 +152,7 @@ const Article = () => {
         title={
           <Breadcrumb separator=">">
             <Breadcrumb.Item>
-              <Link to="/layout/home">首页</Link>
+              <Link to="/layout">首页</Link>
             </Breadcrumb.Item>
             <Breadcrumb.Item>内容管理</Breadcrumb.Item>
           </Breadcrumb>
@@ -195,11 +195,11 @@ const Article = () => {
         </Form>
       </Card>
       {/* 列表区域 */}
-      <Card title={`根据筛选条件共查询到 ${artical.count} 条结果：`}>
+      <Card title={`根据筛选条件共查询到 ${article.count} 条结果：`}>
         <Table
           rowKey="id"
           columns={columns}
-          dataSource={artical.list}
+          dataSource={article.list}
           pagination={{
             position: ['bottomCenter'],
             current: params.page,
